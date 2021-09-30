@@ -1,0 +1,130 @@
+/* ############################ Variabales ############################### */
+:root {
+	--sedanColor: hsl(31, 77%, 52%);
+	--suvColor: hsl(184, 100%, 22%);
+	--luxColor: hsl(179, 100%, 13%);
+	--pColor: hsla(0, 0%, 100%, 0.75);
+	--backColor: hsl(0, 0%, 95%);
+}
+/* ############################## Position ############################## */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body,
+html {
+	font-family: "Lexend Deca", sans-serif;
+	background-color: var(--backColor);
+}
+main {
+	background-color: var(--backColor);
+}
+div.cards {
+	margin: 4rem 1rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, 1fr);
+	background-image: linear-gradient(
+		to bottom,
+		var(--sedanColor) 0% 33.3%,
+		var(--suvColor) 33.3% 66.6%,
+		var(--luxColor) 66.6%
+	);
+}
+
+/* ################################# Text ############################  */
+
+h1 {
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-family: "Big Shoulders Display";
+	color: var(--backColor);
+	margin-bottom: 2.5rem;
+}
+p {
+	color: var(--pColor);
+	margin-bottom: 3rem;
+}
+
+button {
+	padding: 0.7rem 2rem;
+	border-radius: 2rem;
+	border-style: none;
+}
+
+button:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+/* ############################# FRAMEWORK ############################ */
+.card-desgin {
+	padding: 5rem 3rem 2.5rem 3rem;
+}
+
+.fig-desgin {
+	min-height: 7vh;
+	background-repeat: no-repeat;
+}
+/* ############################## CARD 1 ############################## */
+
+.card1 {
+	border-radius: 10px 10px 0 0;
+}
+.fig1 {
+	background-image: url(icon-sedans.svg);
+}
+
+.card1 button {
+	color: var(--sedanColor);
+}
+
+/* ############################## CARD 2 ############################## */
+
+.fig2 {
+	background-image: url(icon-suvs.svg);
+}
+
+.card2 button {
+	color: var(--suvColor);
+}
+
+/* ############################## CARD 3 ############################## */
+
+.card3 {
+	border-radius: 0 0 10px 10px;
+}
+.fig3 {
+	background-image: url(icon-luxury.svg);
+}
+
+.card3 button {
+	color: var(--luxColor);
+}
+
+/* ################################# OTHER SCREENS ######################### */
+@media (min-width: 768px) {
+	.card-desgin {
+		padding: 3rem 2rem 2.5rem 3rem;
+	}
+
+	div.cards {
+		display: flex;
+		flex-flow: row nowrap;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0%;
+		padding: 0%;
+		background-image: linear-gradient(
+			to right,
+			var(--sedanColor) 0% 33.3%,
+			var(--suvColor) 33.3% 66.6%,
+			var(--luxColor) 66.6%
+		);
+		border-radius: 10px;
+	}
+}
